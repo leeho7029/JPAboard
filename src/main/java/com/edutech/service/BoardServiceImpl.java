@@ -16,9 +16,11 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
+//@RequiredArgsConstructor는 Lombok라이브러리이고
+// 클래스의 final이나 @NonNull이 붙은 필드를 가지고 있는경우 해당 필드를 사용하여 생성자를 자동으로 생성해준다.
 @Transactional
 public class BoardServiceImpl implements BoardService {
-
+//스프링 버전이 4.3 이상이라면, @Autowired 어노테이션을 생략해도 의존성 주입이 제대로 이루어진다.
     private final BoardRepository boardRepository;
 
     private final ModelMapper modelMapper;
